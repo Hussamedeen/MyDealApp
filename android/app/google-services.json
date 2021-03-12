@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "885217007942",
+    "firebase_url": "https://wafar-cash.firebaseio.com",
+    "project_id": "wafar-cash",
+    "storage_bucket": "wafar-cash.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:885217007942:android:08a552deda03ecff012d47",
+        "android_client_info": {
+          "package_name": "com.wafarcash.deals"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "885217007942-auit8ro28ad6t719oh6f8ei330o4g9me.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7fPrVK0rwb5EFfO-ON_LxDZw_jQcF114"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "885217007942-auit8ro28ad6t719oh6f8ei330o4g9me.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
