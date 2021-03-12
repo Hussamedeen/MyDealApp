@@ -60,6 +60,7 @@ class _DealScreen extends State<DealsPage> {
   void initState() {
     super.initState();
     // TODO: Create a BannerAd instance
+
     _ad = BannerAd(
       adUnitId: AdHelper.bannerAdUnitId,
       size: AdSize.banner,
@@ -142,7 +143,7 @@ class _DealScreen extends State<DealsPage> {
             return (snapshot.data.length == 0)
                 ? Center(
                     child: Text(
-                    'No Deals exists',
+                    'لا توجد عروض الآن',
                     style: h3,
                   ))
                 : ListView.builder(
@@ -195,7 +196,7 @@ class _DealScreen extends State<DealsPage> {
                                           text:
                                               (snapshot.data[index].exclusive ==
                                                       true)
-                                                  ? '    Exclusive'
+                                                  ? '    حصري'
                                                   : '',
                                           style: new TextStyle(
                                               color: Colors.red,

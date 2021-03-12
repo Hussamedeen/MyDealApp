@@ -207,6 +207,7 @@ class _HomeState extends State<HomeScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
+
                 sectionHeader('كل المتاجر', onViewMore: () {
                   Navigator.push(
                     context,

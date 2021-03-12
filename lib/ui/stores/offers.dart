@@ -86,7 +86,7 @@ class _OfferScreen extends State<OffersPage> {
             return (snapshot.data.length == 0)
                 ? Center(
                     child: Text(
-                    'No Offer exists',
+                    'لا يوجد عروض الآن',
                     style: h3,
                   ))
                 : ListView.builder(

@@ -188,7 +188,7 @@ class _CouponScreen extends State<CouponsPage> {
                                           text:
                                               (snapshot.data[index].exclusive ==
                                                       true)
-                                                  ? '    Exclusive'
+                                                  ? '    حصريا'
                                                   : '',
                                           style: new TextStyle(
                                               color: Colors.red,

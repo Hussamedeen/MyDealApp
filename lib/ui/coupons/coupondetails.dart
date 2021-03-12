@@ -52,12 +52,12 @@ class _CouponScreen extends State<CouponDetailPage> {
               onTap: () async => {
                 (coupon.code == "")
                     ? await Share.share(
-                        coupon.title + " visit store now " + coupon.url)
-                    : await Share.share(" use coupon code " +
+                        coupon.title + " قم بزيارة المتجر الآن " + coupon.url)
+                    : await Share.share(" استخدم كود الكوبون " +
                         coupon.code +
-                        " to " +
+                        " لتحصل على خصم" +
                         coupon.title +
-                        " visit store now " +
+                        " قم بزيارة المتجر الآن" +
                         coupon.url),
               },
               child: Container(

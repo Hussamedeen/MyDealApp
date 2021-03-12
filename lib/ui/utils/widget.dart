@@ -108,10 +108,11 @@ Widget listCoupons(BuildContext context, Coupons coupon) {
                   alignment: Alignment.topRight,
                   child: Padding(
                     padding: EdgeInsets.all(12),
-                    child: Text("exclusive",
+                    child: Text("حصرياً",
                         style: TextStyle(
+                          backgroundColor: Colors.white,
                             color: Colors.red,
-                            fontSize: 12,
+                            fontSize: 20,
                             fontWeight: FontWeight.bold)),
                   ),
                 ),
@@ -188,10 +189,11 @@ Widget listDeals(BuildContext context, Coupons coupon) {
                   alignment: Alignment.topRight,
                   child: Padding(
                     padding: EdgeInsets.all(12),
-                    child: Text("exclusive",
+                    child: Text("حصرياً",
                         style: TextStyle(
+                          backgroundColor: Colors.white,
                             color: Colors.red,
-                            fontSize: 12,
+                            fontSize: 20,
                             fontWeight: FontWeight.bold)),
                   ),
                 ),
@@ -214,7 +216,7 @@ Widget listDeals(BuildContext context, Coupons coupon) {
                         color: primaryColor,
                         child: Center(
                           child: Text(
-                            " Go to the Deal                >",
+                            " إذهب للعرض                >",
                             style: TextStyle(
                               color: Colors.white,
                               // backgroundColor: primaryColor,
@@ -262,10 +264,8 @@ String showDate(Timestamp timestamp) {
   int year = timestamp.toDate().year;
   int month = timestamp.toDate().month;
   int day = timestamp.toDate().day;
-  return "Valid Till : " +
-      day.toString() +
-      " " +
-      months[month - 1] +
-      ", " +
-      year.toString();
+  return "صالح لحتى : " +  " " + year.toString() + " " + day.toString() + " " + " " + months[month - 1] ;
 }
+//day.toString()
+//months[month - 1]
+// year.toString()
