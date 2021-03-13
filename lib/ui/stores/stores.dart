@@ -54,7 +54,7 @@ class _StoreScreen extends State<StorePage> {
             if (!snapshot.hasData)
               return Container(
                   alignment: FractionalOffset.center,
-                  child: CircularProgressIndicator());
+                  child: CircularProgressIndicator(backgroundColor: Colors.blue,));
 
             this.didFetchStores = true;
             this.fetchedStores = snapshot.data;

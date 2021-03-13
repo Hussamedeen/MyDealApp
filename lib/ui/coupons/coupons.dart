@@ -19,7 +19,7 @@ class CouponsPage extends StatefulWidget {
 
 class _CouponScreen extends State<CouponsPage> {
   // TODO: Add _kAdIndex
-  static final _kAdIndex = 2;
+  static final _kAdIndex = 4;
 
   // TODO: Add a BannerAd instance
   BannerAd _ad;
@@ -57,6 +57,7 @@ class _CouponScreen extends State<CouponsPage> {
       request: AdRequest(),
       listener: AdListener(
         onAdLoaded: (_) {
+          if (!_isAdLoaded)
           setState(() {
             _isAdLoaded = true;
           });
@@ -129,7 +130,7 @@ class _CouponScreen extends State<CouponsPage> {
             if (!snapshot.hasData)
               return Container(
                   alignment: FractionalOffset.center,
-                  child: CircularProgressIndicator());
+                  child: CircularProgressIndicator(backgroundColor: Colors.blue,));
             this.didFetchCoupons = true;
             this.fetchedCoupons = snapshot.data;
             return (snapshot.data.length == 0)

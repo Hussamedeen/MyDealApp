@@ -30,6 +30,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeState extends State<HomeScreen> {
 
   BannerAd banner;
+  BannerAd banner1;
   bool didFetchCategories = false;
   bool didFetchStores = false;
   bool didFetchCoupons = false;
@@ -56,7 +57,15 @@ class _HomeState extends State<HomeScreen> {
     final adState = Provider.of<AdState>(context);
     adState.initialization.then((status) {
       setState(() {
-        banner= BannerAd(
+        banner = BannerAd(
+          adUnitId: adState.bannerAdUnitId,
+          size: AdSize.banner,
+          request: AdRequest(),
+          listener: adState.adListener,
+        )..load();
+      });
+      setState(() {
+        banner1 = BannerAd(
           adUnitId: adState.bannerAdUnitId,
           size: AdSize.banner,
           request: AdRequest(),
@@ -157,7 +166,7 @@ class _HomeState extends State<HomeScreen> {
             if (!snapshot.hasData)
               return Container(
                   alignment: FractionalOffset.center,
-                  child: CircularProgressIndicator());
+                  child: CircularProgressIndicator(backgroundColor: Colors.blue,));
 
             this.didFetchCategories = true;
             this.fetchedCategories = snapshot.data;
@@ -540,6 +549,14 @@ class _HomeState extends State<HomeScreen> {
                   ),
                 buildCategories(),
                 buildCoupons(),
+                if(banner1==null)
+                  SizedBox(height: 50.0,)
+                else
+                  Container(
+                    height: 50.0,
+                    child: AdWidget(ad: banner1,),
+                  ),
+
                 buildStores(),
                 buildDeals(),
               ],

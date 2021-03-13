@@ -1,18 +1,20 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:provider/provider.dart';
 import 'package:wafar_cash/ad_helper.dart';
+import 'package:wafar_cash/ad_state.dart';
 import 'package:wafar_cash/constants.dart';
 import 'package:wafar_cash/helper/styles.dart';
 import 'package:wafar_cash/model/coupons.dart';
 import 'package:wafar_cash/ui/utils/widget.dart';
-
 
 import 'dealsdetails.dart';
 
 class DealsPage extends StatefulWidget {
   final String categoryId;
   final String storeId;
+
   DealsPage(this.categoryId, this.storeId, {Key key}) : super(key: key);
 
   @override
@@ -20,8 +22,6 @@ class DealsPage extends StatefulWidget {
 }
 
 class _DealScreen extends State<DealsPage> {
-
-
 // TODO: Add _kAdIndex
   static final _kAdIndex = 4;
 
@@ -39,26 +39,43 @@ class _DealScreen extends State<DealsPage> {
     return rawIndex;
   }
 
-
   final String categoryId;
   final String storeId;
 
   _DealScreen(this.categoryId, this.storeId);
+
   bool didFetchDeals = false;
   List<Coupons> fetchedDeals = [];
 
-
-@override
+  @override
   void dispose() {
     // TODO: implement dispose
-   _ad?.dispose();
+    _ad?.dispose();
     super.dispose();
-
   }
 
+  List<Object> itemList;
+
+// @override
+//   void didChangeDependencies() {
+//     // TODO: implement didChangeDependencies
+//     super.didChangeDependencies();
+//     final adState = Provider.of<AdState>(context);
+//     adState.initialization.then((status) {
+//       setState(() {
+//         banner= BannerAd(
+//           adUnitId: adState.bannerAdUnitId,
+//           size: AdSize.banner,
+//           request: AdRequest(),
+//           listener: adState.adListener,
+//         )..load();
+//       });
+//     } );
+//   }
   @override
   void initState() {
     super.initState();
+
     // TODO: Create a BannerAd instance
 
     _ad = BannerAd(
@@ -67,9 +84,10 @@ class _DealScreen extends State<DealsPage> {
       request: AdRequest(),
       listener: AdListener(
         onAdLoaded: (_) {
-          setState(() {
-            _isAdLoaded = true;
-          });
+          if (!_isAdLoaded)
+            setState(() {
+              _isAdLoaded = true;
+            });
         },
         onAdFailedToLoad: (_, error) {
           print('Ad load failed (code=${error.code} message=${error.message})');
@@ -80,6 +98,7 @@ class _DealScreen extends State<DealsPage> {
     // TODO: Load an ad
     _ad.load();
   }
+
   Future<List<Coupons>> getDeals() async {
     List<Coupons> items = [];
     var data = await Firestore.instance
@@ -113,7 +132,6 @@ class _DealScreen extends State<DealsPage> {
     return items;
   }
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -137,7 +155,7 @@ class _DealScreen extends State<DealsPage> {
             if (!snapshot.hasData)
               return Container(
                   alignment: FractionalOffset.center,
-                  child: CircularProgressIndicator());
+                  child: CircularProgressIndicator(backgroundColor: Colors.blue,));
             this.didFetchDeals = true;
             this.fetchedDeals = snapshot.data;
             return (snapshot.data.length == 0)
@@ -149,9 +167,10 @@ class _DealScreen extends State<DealsPage> {
                 : ListView.builder(
                     // shrinkWrap: true,
                     scrollDirection: Axis.vertical,
-                    itemCount: snapshot.data.length,
+                    itemCount: snapshot.data.length + (_isAdLoaded ? 1 : 0),
                     itemBuilder: (BuildContext context, int index) {
                       if (_isAdLoaded && index == _kAdIndex) {
+                        print("----------");
                         return Container(
                           child: AdWidget(ad: _ad),
                           width: _ad.size.width.toDouble(),
@@ -169,17 +188,17 @@ class _DealScreen extends State<DealsPage> {
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) =>
-                                        DealsDetailPage(snapshot.data[index])),
+                                        DealsDetailPage(item)),
                               )
                             },
                             child: ListTile(
                                 leading: Image.network(
-                                  (snapshot.data[index].image == null)
+                                  (item.image == null)
                                       ? DEFAULT_IMAGE
-                                      : snapshot.data[index].image,
+                                      : item.image,
                                   width: 120,
                                 ),
-                                title: Text(snapshot.data[index].title),
+                                title: Text(item.title),
                                 subtitle: RichText(
                                   text: new TextSpan(
                                     // Note: Styles for TextSpans must be explicitly defined.
@@ -189,15 +208,11 @@ class _DealScreen extends State<DealsPage> {
                                       color: Colors.black,
                                     ),
                                     children: <TextSpan>[
+                                      new TextSpan(text: showDate(item.expire)),
                                       new TextSpan(
-                                          text: showDate(
-                                              snapshot.data[index].expire)),
-                                      new TextSpan(
-                                          text:
-                                              (snapshot.data[index].exclusive ==
-                                                      true)
-                                                  ? '    حصري'
-                                                  : '',
+                                          text: (item.exclusive == true)
+                                              ? '    حصري'
+                                              : '',
                                           style: new TextStyle(
                                               color: Colors.red,
                                               fontWeight: FontWeight.bold)),
@@ -215,10 +230,7 @@ class _DealScreen extends State<DealsPage> {
       return Text(this.fetchedDeals.toString());
       //  ListView(children: this.fetchedCategories);
     }
-
   }
-
-
 }
 
 class QuerySnapshot {}

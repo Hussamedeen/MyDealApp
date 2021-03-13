@@ -1,4 +1,4 @@
-import 'dart:convert';
+//import 'dart:convert';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -6,12 +6,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_facebook_login/flutter_facebook_login.dart';
+//import 'package:flutter_facebook_login/flutter_facebook_login.dart';
 import '../../model/User.dart';
 import '../bottomnavigation.dart';
 import '../services/Authenticate.dart';
 import '../utils/helper.dart';
-import 'package:http/http.dart' as http;
+//import 'package:http/http.dart' as http;
 
 import '../../constants.dart' as Constants;
 import '../../main.dart';
@@ -141,74 +141,74 @@ class _LoginScreen extends State<LoginScreen> {
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(32.0),
-              child: Center(
-                child: Text(
-                  'أو من خلال حسابك على الفيسبوك',
-                  style: TextStyle(color: Colors.black),
-                ),
-              ),
-            ),
-            Padding(
-              padding:
-                  const EdgeInsets.only(right: 40.0, left: 40.0, bottom: 20),
-              child: ConstrainedBox(
-                constraints: const BoxConstraints(minWidth: double.infinity),
-                child: RaisedButton.icon(
-                  label: Text(
-                    'تسجيل الدخول بالفيسبوك',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                  ),
-                  icon: Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 8.0),
-                    child: Image.asset(
-                      'assets/images/facebook_logo.png',
-                      color: Colors.white,
-                      height: 30,
-                      width: 30,
-                    ),
-                  ),
-                  color: Color(Constants.FACEBOOK_BUTTON_COLOR),
-                  textColor: Colors.white,
-                  splashColor: Color(Constants.FACEBOOK_BUTTON_COLOR),
-                  onPressed: () async {
-                    final facebookLogin = FacebookLogin();
-                    final result = await facebookLogin.logIn(['email']);
-                    switch (result.status) {
-                      case FacebookLoginStatus.loggedIn:
-                        showProgress(
-                            context, 'تسجيل الدخول ، الرجاء الانتظار ...', false);
-                        await FirebaseAuth.instance
-                            .signInWithCredential(
-                                FacebookAuthProvider.getCredential(
-                                    accessToken: result.accessToken.token))
-                            .then((AuthResult authResult) async {
-                          User user = await _fireStoreUtils
-                              .getCurrentUser(authResult.user.uid);
-                          if (user == null) {
-                            _createUserFromFacebookLogin(
-                                result, authResult.user.uid);
-                          } else {
-                            _syncUserDataWithFacebookData(result, user);
-                          }
-                        });
-                        break;
-                      case FacebookLoginStatus.cancelledByUser:
-                        break;
-                      case FacebookLoginStatus.error:
-                        showAlertDialog(
-                            context, 'خطأ', 'لا يمكن تسجيل الدخول عبر الفيسبوك.');
-                        break;
-                    }
-                  },
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(25.0),
-                      side: BorderSide(
-                          color: Color(Constants.FACEBOOK_BUTTON_COLOR))),
-                ),
-              ),
-            ),
+            // Padding(
+            //   padding: const EdgeInsets.all(32.0),
+            //   child: Center(
+            //     child: Text(
+            //       'أو من خلال حسابك على الفيسبوك',
+            //       style: TextStyle(color: Colors.black),
+            //     ),
+            //   ),
+            // ),
+            // Padding(
+            //   padding:
+            //       const EdgeInsets.only(right: 40.0, left: 40.0, bottom: 20),
+            //   child: ConstrainedBox(
+            //     constraints: const BoxConstraints(minWidth: double.infinity),
+            //     child: RaisedButton.icon(
+            //       label: Text(
+            //         'تسجيل الدخول بالفيسبوك',
+            //         style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            //       ),
+            //       icon: Padding(
+            //         padding: const EdgeInsets.symmetric(vertical: 8.0),
+            //         child: Image.asset(
+            //           'assets/images/facebook_logo.png',
+            //           color: Colors.white,
+            //           height: 30,
+            //           width: 30,
+            //         ),
+            //       ),
+            //       color: Color(Constants.FACEBOOK_BUTTON_COLOR),
+            //       textColor: Colors.white,
+            //       splashColor: Color(Constants.FACEBOOK_BUTTON_COLOR),
+            //       onPressed: () async {
+            //         final facebookLogin = FacebookLogin();
+            //         final result = await facebookLogin.logIn(['email']);
+            //         switch (result.status) {
+            //           case FacebookLoginStatus.loggedIn:
+            //             showProgress(
+            //                 context, 'تسجيل الدخول ، الرجاء الانتظار ...', false);
+            //             await FirebaseAuth.instance
+            //                 .signInWithCredential(
+            //                     FacebookAuthProvider.getCredential(
+            //                         accessToken: result.accessToken.token))
+            //                 .then((AuthResult authResult) async {
+            //               User user = await _fireStoreUtils
+            //                   .getCurrentUser(authResult.user.uid);
+            //               if (user == null) {
+            //                 _createUserFromFacebookLogin(
+            //                     result, authResult.user.uid);
+            //               } else {
+            //                 _syncUserDataWithFacebookData(result, user);
+            //               }
+            //             });
+            //             break;
+            //           case FacebookLoginStatus.cancelledByUser:
+            //             break;
+            //           case FacebookLoginStatus.error:
+            //             showAlertDialog(
+            //                 context, 'خطأ', 'لا يمكن تسجيل الدخول عبر الفيسبوك.');
+            //             break;
+            //         }
+            //       },
+            //       shape: RoundedRectangleBorder(
+            //           borderRadius: BorderRadius.circular(25.0),
+            //           side: BorderSide(
+            //               color: Color(Constants.FACEBOOK_BUTTON_COLOR))),
+            //     ),
+            //   ),
+            // ),
           ],
         ),
       ),
@@ -282,46 +282,46 @@ class _LoginScreen extends State<LoginScreen> {
     super.dispose();
   }
 
-  void _createUserFromFacebookLogin(
-      FacebookLoginResult result, String userID) async {
-    final token = result.accessToken.token;
-    final graphResponse = await http.get('https://graph.facebook.com/v2'
-        '.12/me?fields=name,first_name,last_name,email,picture.type(large)&access_token=$token');
-    final profile = json.decode(graphResponse.body);
-    var user = {
-      "firstName": profile['first_name'],
-      "lastName": profile['last_name'],
-      "email": profile['email'],
-      "profilePictureURL": profile['picture']['data']['url'],
-      "active": true,
-      "id": userID
-    };
-    await FireStoreUtils.firestore
-        .collection(Constants.USERS)
-        .document(userID)
-        .setData(user)
-        .then((onValue) {
-      MyAppState.currentUser = User.fromJson(user);
-      hideProgress();
-      pushAndRemoveUntil(
-          context, BottomNavigation(user: User.fromJson(user)), false);
-    });
-  }
-
-  void _syncUserDataWithFacebookData(
-      FacebookLoginResult result, User user) async {
-    final token = result.accessToken.token;
-    final graphResponse = await http.get('https://graph.facebook.com/v2'
-        '.12/me?fields=name,first_name,last_name,email,picture.type(large)&access_token=$token');
-    final profile = json.decode(graphResponse.body);
-    user.profilePictureURL = profile['picture']['data']['url'];
-    user.firstName = profile['first_name'];
-    user.lastName = profile['last_name'];
-    user.email = profile['email'];
-    user.active = true;
-    await _fireStoreUtils.updateCurrentUser(user, context);
-    MyAppState.currentUser = user;
-    hideProgress();
-    pushAndRemoveUntil(context, BottomNavigation(user: user), false);
-  }
+  // void _createUserFromFacebookLogin(
+  //     FacebookLoginResult result, String userID) async {
+  //   final token = result.accessToken.token;
+  //   final graphResponse = await http.get('https://graph.facebook.com/v2'
+  //       '.12/me?fields=name,first_name,last_name,email,picture.type(large)&access_token=$token');
+  //   final profile = json.decode(graphResponse.body);
+  //   var user = {
+  //     "firstName": profile['first_name'],
+  //     "lastName": profile['last_name'],
+  //     "email": profile['email'],
+  //     "profilePictureURL": profile['picture']['data']['url'],
+  //     "active": true,
+  //     "id": userID
+  //   };
+  //   await FireStoreUtils.firestore
+  //       .collection(Constants.USERS)
+  //       .document(userID)
+  //       .setData(user)
+  //       .then((onValue) {
+  //     MyAppState.currentUser = User.fromJson(user);
+  //     hideProgress();
+  //     pushAndRemoveUntil(
+  //         context, BottomNavigation(user: User.fromJson(user)), false);
+  //   });
+  // }
+  //
+  // void _syncUserDataWithFacebookData(
+  //     FacebookLoginResult result, User user) async {
+  //   final token = result.accessToken.token;
+  //   final graphResponse = await http.get('https://graph.facebook.com/v2'
+  //       '.12/me?fields=name,first_name,last_name,email,picture.type(large)&access_token=$token');
+  //   final profile = json.decode(graphResponse.body);
+  //   user.profilePictureURL = profile['picture']['data']['url'];
+  //   user.firstName = profile['first_name'];
+  //   user.lastName = profile['last_name'];
+  //   user.email = profile['email'];
+  //   user.active = true;
+  //   await _fireStoreUtils.updateCurrentUser(user, context);
+  //   MyAppState.currentUser = user;
+  //   hideProgress();
+  //   pushAndRemoveUntil(context, BottomNavigation(user: user), false);
+  // }
 }

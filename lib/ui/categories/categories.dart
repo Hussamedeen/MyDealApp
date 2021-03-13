@@ -52,7 +52,7 @@ class _CategoryScreen extends State<CategoryPage> {
             if (!snapshot.hasData)
               return Container(
                   alignment: FractionalOffset.center,
-                  child: CircularProgressIndicator());
+                  child: CircularProgressIndicator(backgroundColor: Colors.blue,));
 
             this.didFetchCategories = true;
             this.fetchedCategories = snapshot.data;
