@@ -1,21 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8658cf7f-d239-49f4-a14d-eeebc228b566" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ui/categories/categories.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/categories/categories.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ui/coupons/coupons.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/coupons/coupons.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ui/deals/deals.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/deals/deals.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ui/home/HomeScreen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/home/HomeScreen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ui/login/LoginScreen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/login/LoginScreen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ui/signUp/SignUpScreen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/signUp/SignUpScreen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ui/stores/stores.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/stores/stores.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
-    </list>
+    <list default="true" id="8658cf7f-d239-49f4-a14d-eeebc228b566" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -83,12 +69,20 @@
       <option name="project" value="LOCAL" />
       <updated>1615575672495</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="v3">
+      <created>1615659754878</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1615659754878</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="v2" />
-    <option name="LAST_COMMIT_MESSAGE" value="v2" />
+    <MESSAGE value="v3" />
+    <option name="LAST_COMMIT_MESSAGE" value="v3" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1883" y="377" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1615492579893">
@@ -99,9 +93,10 @@
       <screen x="1366" y="44" width="1920" height="1050" />
     </state>
     <state x="1458" y="136" width="1736" height="866" key="AVDManager/0.0.1366.738/1366.44.1920.1050@1366.44.1920.1050" timestamp="1615127376214" />
-    <state x="196" y="0" key="CommitChangelistDialog2" timestamp="1615575667910">
-      <screen x="0" y="0" width="1366" height="738" />
+    <state x="1641" y="44" key="CommitChangelistDialog2" timestamp="1615659751131">
+      <screen x="1366" y="44" width="1920" height="1050" />
     </state>
+    <state x="1641" y="44" key="CommitChangelistDialog2/0.0.1366.738/1366.44.1920.1050@1366.44.1920.1050" timestamp="1615659751131" />
     <state x="196" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1615575667910" />
     <state x="526" y="196" key="FileChooserDialogImpl" timestamp="1615636009899">
       <screen x="0" y="0" width="1366" height="738" />
