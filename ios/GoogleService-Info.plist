@@ -1,1 +1,36 @@
-Replace this file with your own config downloaded from Firebase.
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>885217007942-bfn68n15c309h66m3r4hlq0bs7capsqj.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.885217007942-bfn68n15c309h66m3r4hlq0bs7capsqj</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDGbQfYW0JNCIToHFgWorl6_8jBbQspSr8</string>
+	<key>GCM_SENDER_ID</key>
+	<string>885217007942</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.wafarcash.deals</string>
+	<key>PROJECT_ID</key>
+	<string>wafar-cash</string>
+	<key>STORAGE_BUCKET</key>
+	<string>wafar-cash.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:885217007942:ios:d339f771e2be4ca0012d47</string>
+	<key>DATABASE_URL</key>
+	<string>https://wafar-cash.firebaseio.com</string>
+</dict>
+</plist>

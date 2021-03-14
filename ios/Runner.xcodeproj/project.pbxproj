@@ -421,8 +421,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.mapp.deals;
-				PRODUCT_NAME = mydeals;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wafarcash.deals;
+				PRODUCT_NAME = Wafar Cash;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -557,8 +557,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.mapp.deals;
-				PRODUCT_NAME = mydeals;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wafarcash.deals;
+				PRODUCT_NAME = Wafar Cash;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -588,8 +588,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.mapp.deals;
-				PRODUCT_NAME = mydeals;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wafarcash.deals;
+				PRODUCT_NAME = Wafar Cash;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
